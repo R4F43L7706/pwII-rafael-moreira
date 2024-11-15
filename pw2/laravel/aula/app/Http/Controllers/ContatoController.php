@@ -28,7 +28,7 @@ class ContatoController extends Controller {
 
         // Inserindo os dados no banco
         Contato::create([
-            'name_contato' => $txtContato,
+            'namecontato' => $txtContato,
             'telefone' => $txtTelefone,
             'endereco' => $txtEndereco
         ]);

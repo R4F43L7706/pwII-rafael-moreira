@@ -37,27 +37,7 @@
     <dialog>
         <h2>Formulario</h2>
 
-        <form action="{{ route('produtos.store') }}" method="POST">
-            @csrf <!-- Adicione o token CSRF para segurança -->
-            <label>Nome</label>
-            <input name="txtNome" type="text" placeholder="Nome do produto" required>
-            
-            <label>Quantidade</label>
-            <input name="txtQtd" type="number" placeholder="Quantidade do produto" required>
 
-            <label>Valor</label>
-            <input name="txtValor" type="number" step="0.01" placeholder="Valor do produto" required>
-
-            <label>Categoria</label>
-                <select name="txtCat" required>
-                    <option value="">Selecione uma Categoria</option>
-                        @foreach($categoria as $tbcategoria)
-                    <option value="{{ $tbcategoria->id_categoria }}">{{ $tbcategoria->name_categoria }}</option>
-                        @endforeach
-                </select>
-
-            <input type="submit" value="Cadastrar">
-        </form>
 
 
         <button id="fechar">Fechar</button>
@@ -86,7 +66,6 @@
             <td> {{ $tbproduto -> name_produto }} </td>
             <td> {{ $tbproduto -> quantidade }} </td>
             <td> R$ {{ $tbproduto ->  valor }} </td>
-            <td>{{ $tbproduto->categoria->name_categoria ?? 'Categoria não encontrada' }}</td>
 
         </tr>
 

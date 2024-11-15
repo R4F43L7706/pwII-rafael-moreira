@@ -26,7 +26,7 @@ class ProdutoController extends Controller {
         $produto = $query->with('categoria')->get();
         $categoria = Categoria::all();
     
-        return view('listarprodutos', ['produto' => $produto, 'categoria' => $categoria]);
+        return view('listarproduto', ['produto' => $produto]);
     }
 
     public function show($id)
